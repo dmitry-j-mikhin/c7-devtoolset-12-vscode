@@ -11,10 +11,19 @@ gpgcheck=0
 repo_gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7' | tee -a /etc/yum.repos.d/devtoolset-12.repo
 
+echo '
+[llvm-toolset-13]
+name=llvm-toolset-13
+baseurl=https://buildlogs.centos.org/c7-llvm-toolset-13.0.x86_64/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7' | tee -a /etc/yum.repos.d/llvm-toolset-13.repo
+
 yum install -y centos-release-scl epel-release #additional repos
 yum -y install https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm
 
-yum install -y devtoolset-12 sudo git \
+yum install -y devtoolset-12 llvm-toolset-13.0-clang-tools-extra valgrind gdb rr mc tig curl sudo git \
  tcl `#sqlite` \
  CUnit-devel libuuid-devel `#libwacl` \
  re2c `#libdetection` \
