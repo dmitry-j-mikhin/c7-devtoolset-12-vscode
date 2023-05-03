@@ -5,7 +5,6 @@ set -- ${1:-bash} ${@:2:$#}
 
 [ -n "$CI_JOB_TOKEN" ] || TTY="-t"
 
-docker pull dmikhin/c7-devtoolset-12
 docker run -i $TTY --rm \
  -e MY_USERNAME=$(id -u -n) \
  -e MY_GROUP=$(id -g -n) \
