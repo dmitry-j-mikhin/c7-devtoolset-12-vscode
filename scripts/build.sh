@@ -45,5 +45,6 @@ echo 'Defaults:%wheel !requiretty' >> /etc/sudoers.d/wheel_group
 
 mv -v /usr/bin/install /usr/bin/install-real
 cp -v /build/install /usr/bin/install
+/build/entrypoint.sh
 
-yum -y clean all && rm -rf /var/cache
+yum -y clean all && rm -rf /var/cache /build

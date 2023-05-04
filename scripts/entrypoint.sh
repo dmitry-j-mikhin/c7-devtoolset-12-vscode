@@ -3,7 +3,7 @@
 set -ex
 
 # use specified user name or use `default` if not specified
-MY_USERNAME="${MY_USERNAME:-default}"
+MY_USERNAME="${MY_USERNAME:-vscode}"
 
 # use specified group name or use the same user name also as the group name
 MY_GROUP="${MY_GROUP:-${MY_USERNAME}}"
@@ -41,4 +41,4 @@ fi
 echo "INFO: Running app as ${MY_USERNAME}:${MY_GROUP} (${MY_UID}:${MY_GID})"
 
 # exec and run the actual process specified in the CMD of the Dockerfile (which gets passed as ${*})
-exec chroot --userspec=${MY_USERNAME}:${MY_GROUP} --groups=wheel / "${@}"
+# exec chroot --userspec=${MY_USERNAME}:${MY_GROUP} --groups=wheel / "${@}"
