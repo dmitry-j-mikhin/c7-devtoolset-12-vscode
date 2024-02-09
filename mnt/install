@@ -1,4 +1,0 @@
-#!/bin/bash
-
-set -x
-exec /usr/bin/install-real -p "$@"
