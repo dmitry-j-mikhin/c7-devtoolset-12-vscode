@@ -7,21 +7,20 @@ echo "fastestmirror=True" >> /etc/dnf/dnf.conf
 
 dnf install -y clang-tools-extra bear \
  gcc g++ make cmake autoconf automake libtool bison flex patch \
- valgrind gdb rr mc tig curl procps \
+ valgrind gdb rr mc tig curl procps psmisc time \
  sudo git \
  tcl `#sqlite` \
  CUnit-devel libuuid-devel `#libwacl` \
  re2c `#libdetection` \
  texinfo `#libconfig` \
  valgrind-devel `#gperftools` \
- openssl-devel `#libproton` \
+ openssl-devel `#only for nginx configure stage` \
  libstdc++-static pcre-devel \
  ruby rubygem-msgpack \
  ruby-devel lcov \
- tcl-devel diffutils which rubygem-rspec \
+ tcl-devel diffutils which \
  readline-devel ncurses-devel libicu-devel libunwind-devel \
- python3.11-devel \
- https://github.com/dmitry-j-mikhin/fedora-openssl-static/releases/download/v3.1.1-4/openssl-static-3.1.1-4.fc39.x86_64.rpm
+ python3.11-devel
 
 echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/wheel_group
 echo 'Defaults:%wheel !requiretty' >> /etc/sudoers.d/wheel_group
